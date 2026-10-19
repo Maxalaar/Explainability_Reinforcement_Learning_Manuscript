@@ -1,15 +1,10 @@
-% Back cover: last page of the thesis, on a verso when printed recto-verso,
-% with title, author, abstract and keywords; no page number, running head or
-% line numbers. When printed, the recto of its sheet is left empty, and its
-% margins are centered like those of the title page.
+% Back cover: last page of the thesis, with title, author, abstract and
+% keywords; no page number, running head or line numbers. When printed
+% recto-verso, it is on a recto, so the verso of the French back cover is left
+% empty and nothing is printed on its own verso. Margins stay centered like
+% those of the title page.
 \cleartorightpage
-\ifprintversion\hbox{}\thispagestyle{empty}\newpage\fi
-\centeredmargins
-% PDF bookmark only (not listed in the table of contents).
-\phantomsection
-\pdfbookmark[0]{Back Cover}{backcover}
 \thispagestyle{empty}
-\nolinenumbers
 \label{chap:back_cover}
 \begin{center}
   {\LARGE\bfseries \ThesisTitle\par}
@@ -17,7 +12,7 @@
   {\large \ThesisAuthor\par}
 \end{center}
 \bigskip
-% \noindent\textbf{Abstract}
+\noindent\textbf{Abstract}
 
 Deep reinforcement learning agents achieve strong performance across a wide range of tasks.
 However, the neural networks that implement their policies are difficult to interpret due to their connectionist nature.

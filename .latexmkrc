@@ -13,3 +13,13 @@ $out_dir = 'build/Working';
 # PlotNeuralNet styles (styles/plotneuralnet/*.sty) are loaded by name, so
 # their folder is added to the TeX search path.
 ensure_path('TEXINPUTS', './styles/plotneuralnet//');
+
+# Glossaries: latexmk runs makeglossaries in the output directory, which the
+# automake option of glossaries-extra cannot do when an output directory is set.
+add_cus_dep('acn', 'acr', 0, 'makeglossaries');
+add_cus_dep('glo', 'gls', 0, 'makeglossaries');
+push @generated_exts, 'acn', 'acr', 'alg', 'glo', 'gls', 'glg';
+sub makeglossaries {
+    my ($base_name, $path) = fileparse($_[0]);
+    return system('makeglossaries', '-d', $path, $base_name);
+}

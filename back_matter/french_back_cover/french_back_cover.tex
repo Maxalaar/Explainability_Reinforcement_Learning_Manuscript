@@ -1,0 +1,46 @@
+% French back cover: page preceding the English back cover, with title,
+% author, French abstract and keywords; no page number, running head or line
+% numbers. Always on a recto when printed recto-verso, and its margins are
+% centered like those of the title page.
+\cleartorightpage
+\centeredmargins
+% PDF bookmark only (not listed in the table of contents).
+\phantomsection
+\pdfbookmark[0]{Back Cover}{backcover}
+\thispagestyle{empty}
+\nolinenumbers
+\label{chap:french_back_cover}
+\begin{center}
+  {\LARGE\bfseries \ThesisTitle\par}
+  \medskip
+  {\large \ThesisAuthor\par}
+\end{center}
+\bigskip
+\noindent\textbf{Résumé}
+
+Les agents d'apprentissage par renforcement profond atteignent de hautes performances sur un large éventail de tâches.
+Cependant, les réseaux de neurones qui implémentent leurs politiques sont difficiles à interpréter en raison de leur nature connexionniste.
+Cette difficulté vient de ce que l'information est distribuée dans l'ensemble du réseau, ce qui rend difficile de relier ses composants internes aux décisions de l'agent.
+
+Dans cette thèse, l'explicabilité de ces agents est obtenue par l'analyse de leurs espaces latents.
+Cette démarche s'inscrit dans une perspective mécaniste, qui cherche à expliquer les décisions des agents en analysant les représentations internes apprises par leurs réseaux de neurones.
+
+La thèse commence par passer en revue les méthodes de l'état de l'art pour l'analyse des espaces latents, afin de donner une vue d'ensemble du domaine.
+Elle précise ensuite ce qui constitue une explication dans le contexte de l'apprentissage par renforcement explicable.
+Sur ces bases, elle passe en revue l'état de l'art de l'apprentissage par renforcement explicable à l'aide d'une taxonomie spécifiquement adaptée à l'apprentissage par renforcement.
+
+En s'appuyant sur ces deux revues, la thèse introduit \textit{Clustering Agent Representation}, une méthode d'explicabilité qui analyse l'espace latent des politiques d'apprentissage par renforcement afin d'identifier des structures significatives dans leurs représentations internes.
+
+Pour évaluer objectivement les structures obtenues, trois métriques sont proposées.
+\textit{Clustering Universality} mesure leur cohérence entre des politiques entraînées indépendamment, ce qui établit que les structures identifiées ne sont pas dues au hasard.
+\textit{Abstraction Score} mesure leur écart à la structure des observations, à celle des actions et à celle d'un réseau non entraîné, ce qui montre que ces structures émergent de l'apprentissage.
+\textit{Adjusted Clustering Universality} combine ces deux mesures pour fournir un critère de choix des représentations à analyser.
+
+Les expériences menées sur six environnements Atari montrent que des politiques entraînées indépendamment convergent vers des structures de clustering similaires.
+Comme cette similarité ne s'explique ni par les observations, ni par les actions, ni par l'architecture du réseau, elle indique une convergence des concepts appris par ces politiques.
+Enfin, une analyse qualitative montre que les clusters obtenus correspondent à des aspects interprétables de la tâche.
+
+Ces résultats montrent que l'analyse des espaces latents est une voie prometteuse pour expliquer les agents d'apprentissage par renforcement, et ouvrent de nouvelles perspectives pour leur compréhension mécaniste.
+
+\bigskip
+\noindent\textbf{Mots-clés :} Intelligence Artificielle Explicable, Apprentissage Profond, Apprentissage par Renforcement, Explicabilité, Explicabilité Mécanistique, Interprétabilité Mécanistique, Espace Latent, Clustering, Regroupement.
